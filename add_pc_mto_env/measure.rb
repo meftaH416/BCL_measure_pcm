@@ -211,7 +211,7 @@ class IDF_EDITING < OpenStudio::Measure::EnergyPlusMeasure
     ts = workspace.getObjectsByType('Timestep'.to_IddObjectType).first
     unless ts.getString(0).to_s <= 20.to_s
       ts.setString(0, time_step)
-      runner.registerInfo('Timestep = 20')
+      runner.registerInfo('Timestep = #{time_step}')
     end
     runner.registerFinalCondition("The final timestep is #{ts}")
 
